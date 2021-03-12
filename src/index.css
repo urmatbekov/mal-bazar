@@ -1,13 +1,34 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: purple;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.color-purple {
+  color: purple;
+}
+
+.btn-purple {
+  color: #fff;
+  background-color: purple;
+  border-color: purple;
+}
+.btn-purple:hover {
+  color: #fff;
+  background-color: rgb(151, 12, 151);
+  border-color: rgb(151, 12, 151);
+}
+.btn-purple:focus {
+  color: #fff;
+  background-color: rgb(168, 48, 168);
+  border-color: rgb(168, 48, 168);
+  box-shadow: 0 0 0 0.2rem rgb(151 12 151 / 50%);
+}
+
+
+.btn-purple:not(:disabled):not(.disabled).active, .btn-purple:not(:disabled):not(.disabled):active, .show>.btn-purple.dropdown-toggle {
+  color: #fff;
+  background-color: rgb(151, 12, 151);
+  border-color: rgb(151, 12, 151);
+}
+.btn-purple:not(:disabled):not(.disabled).active:focus, .btn-purple:not(:disabled):not(.disabled):active:focus, .show>.btn-purple.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgb(151 12 151 / 50%);
 }
