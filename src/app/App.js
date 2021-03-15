@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Home from '../screens/home/Home';
 
 const App = () => {
+    const [categories,setCategories] = useState()
     return (
         <div className="container border shadow-sm mt-5 rounded">
             <h1>Mal Bazar</h1>
             <main>
-                <Home />
+                <Home/>
             </main>
         </div>
     );
