@@ -1,0 +1,11 @@
+.fav-category {
+    box-sizing: border-box;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.2s;
+    display: block;
+}
+
+.fav-category:hover {
+    transform: scale(1.02);
+}

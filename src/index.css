@@ -2,6 +2,10 @@ body {
   color: purple;
 }
 
+img {
+  width: 100%;
+}
+
 .color-purple {
   color: purple;
 }
@@ -32,3 +36,5 @@ body {
 .btn-purple:not(:disabled):not(.disabled).active:focus, .btn-purple:not(:disabled):not(.disabled):active:focus, .show>.btn-purple.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgb(151 12 151 / 50%);
 }
+
+
