@@ -3,6 +3,7 @@ import FavoritCategory from './FavoritCategory';
 import './favorite-category.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/swiper.min.css"
+import { connect } from 'react-redux';
 
 const FavoriteCategories = ({ categories }) => {
     return (
@@ -16,4 +17,8 @@ const FavoriteCategories = ({ categories }) => {
     );
 };
 
-export default FavoriteCategories;
+const mapStateToProps = ({categories}) => {
+    return {categories}
+}
+
+export default connect(mapStateToProps)(FavoriteCategories);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import {connect} from "react-redux"
 
 const Category = ({categories}) => {
     const {slug} = useParams()
@@ -12,4 +13,8 @@ const Category = ({categories}) => {
     );
 };
 
-export default Category;
+const mapStateToProps = ({categories}) => {
+    return {categories}
+}
+
+export default connect(mapStateToProps)(Category);

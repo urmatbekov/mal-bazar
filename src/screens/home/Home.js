@@ -3,11 +3,11 @@ import FavoriteCategories from '../../components/favorit-categories/FavoriteCate
 import ProductList from '../../components/product-list/ProductList';
 import Search from '../../components/search/Search';
 
-const Home = ({categories}) => {
+const Home = () => {
     return (
         <div>
             <Search/>
-            <FavoriteCategories categories={categories}/>
+            <FavoriteCategories />
             <ProductList/>
         </div>
     );
