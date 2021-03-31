@@ -1,7 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from "react-router-dom"
 
-const Navbar = () => {
+const Navbar = ({ user }) => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
@@ -13,6 +14,12 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to="/login">Login</Link>
                         </li>
+                        <li className="nav-item">
+                            <span className="nav-link">
+                                Username: 
+                                {user.data.username}
+                            </span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -20,4 +27,8 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+const msp = ({ user }) => {
+    return { user }
+}
+
+export default connect(msp)(Navbar);

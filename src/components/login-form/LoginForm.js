@@ -1,9 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {Field,reduxForm} from "redux-form"
 
-const LoginForm = ({handleSubmit }) => {
+const LoginForm = ({handleSubmit,user }) => {
     return (
         <form onSubmit={handleSubmit}>
+            {user.error !== null &&
+            <span>{user.error}</span>
+            }
             <div className="form-group">
                 <Field className="form-control" name="username" component="input" type="text"/>
             </div>
@@ -17,6 +21,10 @@ const LoginForm = ({handleSubmit }) => {
     );
 };
 
+const msp = ({user}) => {
+    return {user}
+}
+
 export default reduxForm({
     form:"login-form"
-})(LoginForm);
+})(connect(msp)(LoginForm));
