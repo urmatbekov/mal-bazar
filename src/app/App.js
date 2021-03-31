@@ -5,8 +5,19 @@ import { Route } from "react-router-dom"
 import About from '../screens/about/About';
 import Navbar from "../components/navbar/Navbar"
 import Login from '../screens/login/Login';
+import { useEffect } from 'react';
+import http from '../service/http';
+import { setUser } from '../reduce/user';
+import { connect } from 'react-redux';
 
-const App = () => {
+const App = ({setUser,user}) => {
+
+    useEffect(()=>{
+        http.get("/auth/users/me/").then((res)=>{
+            setUser(res.data)
+        })
+    },[])
+    console.log(user)
     return (
         <div>
             <header>
@@ -33,4 +44,8 @@ const App = () => {
     );
 };
 
-export default App;
+const msp = ({user}) => {
+    return {user}
+}
+
+export default connect(msp,{setUser})(App);
