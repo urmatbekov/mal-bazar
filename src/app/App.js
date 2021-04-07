@@ -9,6 +9,8 @@ import { useEffect } from 'react';
 import http from '../service/http';
 import { setUser } from '../reduce/user';
 import { connect } from 'react-redux';
+import ProductsDetail from '../screens/products/ProductsDetail';
+import FavoriteCategories from "../components/favorit-categories/FavoriteCategories"
 
 const App = ({setUser,user}) => {
 
@@ -26,6 +28,7 @@ const App = ({setUser,user}) => {
             <div className="container border shadow-sm mt-5 rounded">
                 <main>
                     <h1 className="text-center">Mal Bazar</h1>
+                    <FavoriteCategories />
                     <Route path="/" exact>
                         <Home />
                     </Route>
@@ -37,6 +40,9 @@ const App = ({setUser,user}) => {
                     </Route>
                     <Route path="/login" exact>
                         <Login />
+                    </Route>
+                    <Route path="/products/:productId" exact>
+                        <ProductsDetail />
                     </Route>
                 </main>
             </div>
