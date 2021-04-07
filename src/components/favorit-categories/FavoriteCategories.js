@@ -10,7 +10,7 @@ const FavoriteCategories = ({ categories }) => {
         <div className="d-flex">
             <Swiper slidesPerView={5}>
                 {categories.map((category) => (
-                    <SwiperSlide><FavoritCategory category={category} /></SwiperSlide>
+                    <SwiperSlide key={category.id}><FavoritCategory category={category} /></SwiperSlide>
                 ))}
             </Swiper>
         </div>
