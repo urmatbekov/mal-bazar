@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom"
 
-const Navbar = ({ user }) => {
+const Navbar = ({ user, cart }) => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
@@ -15,10 +15,9 @@ const Navbar = ({ user }) => {
                             <Link className="nav-link" to="/login">Login</Link>
                         </li>
                         <li className="nav-item">
-                            <span className="nav-link">
-                                Username: 
-                                {user.data.username}
-                            </span>
+                            <Link className="nav-link" to="/cart">
+                                Cart <span className="badge badge-primary badge-pill">{cart.cartItems.length}</span>
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -27,8 +26,8 @@ const Navbar = ({ user }) => {
     );
 };
 
-const msp = ({ user }) => {
-    return { user }
+const msp = ({ user, cart }) => {
+    return { user, cart }
 }
 
 export default connect(msp)(Navbar);

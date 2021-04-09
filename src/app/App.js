@@ -11,19 +11,19 @@ import { setUser } from '../reduce/user';
 import { connect } from 'react-redux';
 import ProductsDetail from '../screens/products/ProductsDetail';
 import FavoriteCategories from "../components/favorit-categories/FavoriteCategories"
+import Cart from '../screens/cart/Cart';
 
-const App = ({setUser,user}) => {
+const App = ({ setUser }) => {
 
-    useEffect(()=>{
-        http.get("/auth/users/me/").then((res)=>{
+    useEffect(() => {
+        http.get("/auth/users/me/").then((res) => {
             setUser(res.data)
         })
-    },[])
-    console.log(user)
+    }, [])
     return (
-        <div>
+        <div className="mb-5">
             <header>
-                <Navbar/>
+                <Navbar />
             </header>
             <div className="container border shadow-sm mt-5 rounded">
                 <main>
@@ -44,14 +44,17 @@ const App = ({setUser,user}) => {
                     <Route path="/products/:productId" exact>
                         <ProductsDetail />
                     </Route>
+                    <Route path="/cart" exact>
+                        <Cart />
+                    </Route>
                 </main>
             </div>
         </div>
     );
 };
 
-const msp = ({user}) => {
-    return {user}
+const msp = ({ }) => {
+    return {}
 }
 
-export default connect(msp,{setUser})(App);
+export default connect(msp, { setUser })(App);
